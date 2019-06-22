@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from "./navigation/nav";
 import Api from "../utils/Api";
 import List from "./list/list";
+import Footer from "./footer/footer";
 
 class Main extends Component {
   state = {
@@ -45,6 +46,7 @@ class Main extends Component {
           handleClick={this.handleClick}
         />
         <List gifs={this.state.result} />
+        <Footer />
       </div>
     );
   }

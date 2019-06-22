@@ -13,17 +13,37 @@ class Main extends Component {
     Api.search("skunk")
       .then(response => {
         this.setState({ result: response.data.data });
-        console.log(this.state.result);
       })
       .catch(err => {
         console.log(err);
       });
   }
 
+  handleChange = event => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleClick = () => {
+    Api.search(this.state.search)
+      .then(response => {
+        this.setState({ result: response.data.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
   render() {
     return (
       <div>
-        <Nav />
+        <Nav
+          search={this.state.search}
+          handleChange={this.handleChange}
+          handleClick={this.handleClick}
+        />
         <List gifs={this.state.result} />
       </div>
     );

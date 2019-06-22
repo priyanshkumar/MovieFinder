@@ -1,0 +1,13 @@
+.cardlist img {
+  width: 200px;
+  height: 200px;
+}
+
+.cardlist {
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px #333333, -1px -1px 5px #c5c0c0;
+}
+
+.cardlist h2 {
+  color: white;
+}
